@@ -180,4 +180,199 @@ int main()
 
 }
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6.	Compile and Execute the C program to find whether the person is eligible for vote or not.
+And if that particular person is not eligible, then print how many years are left to be eligible.
 
+Sample Input:
+ Enter your age: 7
+
+Sample output:
+You are allowed to vote after 11 years
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a;
+	
+	printf("Enter the Age");
+	scanf("%d",&a);
+	int years_left = 18 - a;
+	
+	if(a>=18)
+	{
+		printf("%d Eligible for vote\n",a);
+	}
+	else
+	{   
+		printf("%d Not Eligible for vote\n",a);
+		printf("You are allowed to vote after %d years", years_left);
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7.	Compile and Execute the C program to check whether the number divisible by 2, then print the given number even otherwise odd.
+Check and display the output on the screen.
+
+Sample Input:
+Enter the number : 6561
+
+Sample Output:
+The given number is odd
+Ans:
+#include <stdio.h>
+int  main()
+{
+	int a;
+	printf("Enter the number");
+	scanf("%d",&a);
+	
+	if(a%2==0)
+	{
+		printf("The given number is Even");
+	}
+	else
+	{
+		printf("The given number is odd");
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8.	Compile and Execute the C program to print numbers from P to Q but except  
+            the digit R using continue statement. Check and display the output on the screen.
+Sample Input:
+P = 60
+Q = 70
+R = 3
+
+Sample Output:
+Numbers are = 60, 61, 62, 64, 65, 66, 67, 68, 69, 70
+Ans:
+#include <stdio.h>
+
+int main()
+{
+    int P, Q, R;
+    printf("Enter P: ");
+    scanf("%d", &P);
+    printf("Enter Q: ");
+    scanf("%d", &Q);
+    printf("Enter digit to exclude (R): ");
+    scanf("%d", &R);
+
+    printf("Numbers are = ");
+
+    for(int num = P; num <= Q; num++)
+    {
+        int temp = num;
+        int found = 0;
+
+        while(temp != 0)
+        {
+            if(temp % 10 == R)   // digit matches R
+            {
+                found = 1;
+                break;
+            }
+            temp /= 10;
+        }
+
+        if(found)
+            continue;
+
+        printf("%d ", num);
+    }
+
+    return 0;
+}
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9.	Write a program to print the following pattern. Get the number of rows from the user.
+Sample input:
+Number of Rows: 5
+Sample output:
+           	  1
+            2  1
+           3  2  1
+         4  3  2  1
+       5  4  3  2  1
+Ans:
+#include <stdio.h>
+
+int main() {
+    int n, i, j, space;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+
+        for(space = 1; space <= n - i; space++) {
+            printf(" ");
+        }
+
+        for(j = i; j >= 1; j--) {
+            printf("%d ", j);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10.	Write a program to print the below pattern.
+Sample Input:
+Number of line: 4
+Sample output:
+1
+2  2
+3   3  3
+4  4  4  4
+Ans:
+#include <stdio.h>
+
+int main() {
+    int i, j, a;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &a);
+
+
+    for (i = 1; i <= a; i++) {
+        for (j = 1; j <= i; j++) {
+            printf("%d", i);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11.	Compile and Execute the C program to print the multiplication table of number m up to n.
+Sample Input:
+M = 4
+N = 5
+Sample Output:
+1x4=4
+2x4=8
+3x4=12
+4x4=16
+5x4=20
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int i,n,c;
+
+	printf("M");
+	scanf("%d",&n);
+	printf("N");
+	scanf("%d",&c);	
+	for(i=1;i<=c;i++)
+	{
+		printf("%d x %d = %d\n",n,i,n*i);
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
