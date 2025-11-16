@@ -1,0 +1,376 @@
+1.	Compile and Execute the C program to calculate Arithmetic Operators Functions such as Pow(x,n), Add(x,n), Sub(x,n), Mul(x,n), Div(x,n), where x and n are the two operands.
+Get the input and choice from the user.
+Sample Input:
+X = 2
+N = 4
+Choice : 2
+Sample Output:
+Add(X,N) = 6
+
+Ans:
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int x, n, choice;
+    int result;
+
+    printf("Enter X: ");
+    scanf("%d", &x);
+
+    printf("Enter N: ");
+    scanf("%d", &n);
+
+    printf("\nChoices:\n");
+    printf("1. Pow(X, N)\n");
+    printf("2. Add(X, N)\n");
+    printf("3. Sub(X, N)\n");
+    printf("4. Mul(X, N)\n");
+    printf("5. Div(X, N)\n");
+
+    printf("\nEnter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+        case 1:
+            result = pow(x, n);
+            printf("Pow(%d,%d) = %d\n", x, n, result);
+            break;
+
+        case 2:
+            result = x + n;
+            printf("Add(%d,%d) = %d\n", x, n, result);
+            break;
+
+        case 3:
+            result = x - n;
+            printf("Sub(%d,%d) = %d\n", x, n, result);
+            break;
+
+        case 4:
+            result = x * n;
+            printf("Mul(%d,%d) = %d\n", x, n, result);
+            break;
+
+        case 5:
+            result = x / n;
+            printf("Div(%d,%d) = %d\n", x, n, result);
+            break;
+
+        default:
+            printf("Invalid choice\n");
+    }
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.	Compile and Execute the C program to change all the digits of a number to bring the digit at the last position to the first position and vice-versa using loop. Get the input from user.
+Sample Input:
+Number: 14567
+Sample Output:
+Reverse Number: 76541
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int n,reverse=0,remainder;
+	printf("Number");
+	scanf("%d",&n);
+	
+	while(n!=0)
+	{
+		remainder=n%10;
+		reverse=reverse*10+remainder;
+		n/=10;
+	}
+	
+	printf("Reverse Number %d\n",reverse);
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.	Compile and Execute the C program to find the Factorial of a positive integer (number) is the sum of multiplication of all the integers smaller than that positive integer.
+N! is denoted as factorial of N. For example, factorial of 5 is 5 * 4 * 3 * 2 * 1 which equals to 120.
+
+Sample Input:
+N = 5
+Sample Output:
+120 
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int i,n,fact=1;
+	
+	printf("N=");
+	scanf("%d",&n);
+	
+	for(i=1;i<=n;i++)
+	{
+		fact=fact*i;
+	}
+	
+	printf("factorial of %d =%d\n",n,fact);
+	return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.	Suppose the number to be check is 6: The user has provided one number that is ‘6’, now we have to think and calculate by which other numbers we can divide ‘6’ and get the remainder as ‘0’.
+If the remainder is zero, then we can say that ‘6’ is divisible by that number and we can take this number into consideration to get the sum by using some more other numbers.
+Compile and execute the above C program.
+Sample Input:
+Given Number: 6
+
+Sample Output:
+Its a Perfect Number 
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a,i,sum=0;
+	printf("Given Number");
+	scanf("%d",&a);
+	
+	
+	for(i=1;i<=a/2;i++)
+	{
+		if(a%i==0)
+		{
+			sum=sum+i;
+		}
+		
+
+	}
+	if(sum==a)
+		{
+			printf(" its a perfect number");
+		} 
+	else
+		{
+			printf("not perfect number");
+		}
+			
+	
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5.	Compile and Execute the C program were the user to enter an integer to compute the square, cube of the given decimal number using standard method.
+
+Sample Input:
+Given Number: 0.6
+
+Sample Output:
+Square Number: 0.36
+Cube Number:0.216 
+Ans:
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int a,square,cube;
+	printf("Given Number");
+	scanf("%d",&a);
+	
+	square=pow(a,2);
+	cube=pow(a,3);
+	
+	printf("Square Number:%d\n",square);
+	printf("Cube Number:%d",cube);
+
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6.	Compile and Execute the C program to find whether the person is eligible for vote or not.
+And if that particular person is not eligible, then print how many years are left to be eligible.
+
+Sample Input:
+ Enter your age: 7
+
+Sample output:
+You are allowed to vote after 11 years
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a;
+	
+	printf("Enter the Age");
+	scanf("%d",&a);
+	int years_left = 18 - a;
+	
+	if(a>=18)
+	{
+		printf("%d Eligible for vote\n",a);
+	}
+	else
+	{   
+		printf("%d Not Eligible for vote\n",a);
+		printf("You are allowed to vote after %d years", years_left);
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7.	Compile and Execute the C program to check whether the number divisible by 2, then print the given number even otherwise odd.
+Check and display the output on the screen.
+
+Sample Input:
+Enter the number : 6561
+
+Sample Output:
+The given number is odd
+Ans:
+#include <stdio.h>
+int  main()
+{
+	int a;
+	printf("Enter the number");
+	scanf("%d",&a);
+	
+	if(a%2==0)
+	{
+		printf("The given number is Even");
+	}
+	else
+	{
+		printf("The given number is odd");
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8.	Compile and Execute the C program to print numbers from P to Q but except  
+            the digit R using continue statement. Check and display the output on the screen.
+Sample Input:
+P = 60
+Q = 70
+R = 3
+
+Sample Output:
+Numbers are = 60, 61, 62, 64, 65, 66, 67, 68, 69, 70
+Ans:
+#include <stdio.h>
+
+int main()
+{
+    int P, Q, R;
+    printf("Enter P: ");
+    scanf("%d", &P);
+    printf("Enter Q: ");
+    scanf("%d", &Q);
+    printf("Enter digit to exclude (R): ");
+    scanf("%d", &R);
+
+    printf("Numbers are = ");
+
+    for(int num = P; num <= Q; num++)
+    {
+        int temp = num;
+        int found = 0;
+
+        while(temp != 0)
+        {
+            if(temp % 10 == R)   // digit matches R
+            {
+                found = 1;
+                break;
+            }
+            temp /= 10;
+        }
+
+        if(found)
+            continue;
+
+        printf("%d ", num);
+    }
+
+    return 0;
+}
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9.	Write a program to print the following pattern. Get the number of rows from the user.
+Sample input:
+Number of Rows: 5
+Sample output:
+           	  1
+            2  1
+           3  2  1
+         4  3  2  1
+       5  4  3  2  1
+Ans:
+#include <stdio.h>
+
+int main() {
+    int n, i, j, space;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+
+        for(space = 1; space <= n - i; space++) {
+            printf(" ");
+        }
+
+        for(j = i; j >= 1; j--) {
+            printf("%d ", j);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10.	Write a program to print the below pattern.
+Sample Input:
+Number of line: 4
+Sample output:
+1
+2  2
+3   3  3
+4  4  4  4
+Ans:
+#include <stdio.h>
+
+int main() {
+    int i, j, a;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &a);
+
+
+    for (i = 1; i <= a; i++) {
+        for (j = 1; j <= i; j++) {
+            printf("%d", i);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11.	Compile and Execute the C program to print the multiplication table of number m up to n.
+Sample Input:
+M = 4
+N = 5
+Sample Output:
+1x4=4
+2x4=8
+3x4=12
+4x4=16
+5x4=20
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int i,n,c;
+
+	printf("M");
+	scanf("%d",&n);
+	printf("N");
+	scanf("%d",&c);	
+	for(i=1;i<=c;i++)
+	{
+		printf("%d x %d = %d\n",n,i,n*i);
+	}
