@@ -16,9 +16,104 @@ int  main()
 		printf("The entered number is odd");
 	}
 }
-Output:
-Enter the number 2
-The entered number is Even
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 2.	Find the Sum of Even and Odd Numbers
 Ans:
+#include <stdio.h>
+
+int main()
+{
+	int a,n,i,odd_sum=0,even_sum=0;
+	printf("Enter the no of elements");
+	scanf("%d",&a);
+	
+	printf("Enter element\n");
+	for(i=0;i<a;i++)
+	{
+		scanf("%d",&n);
+	if(n%2==0)
+	{
+	  even_sum+=n;
+	}
+	else
+	{
+		odd_sum+=n;
+	}
+
+		
+
+}	
+	printf("Sum of odd:%d\n",odd_sum);
+	printf("Sum of Even:%d",even_sum);
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.	Find the Largest Number Among Three Numbers.
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int a,b,c;
+	printf("Enter the value of a,b,c");
+	scanf("%d%d%d",&a,&b,&c);
+	
+	if(a>b && a>c)
+	{
+		(b>a && b>c);
+	}
+	else if(b>a && b>c)
+	{
+		printf("b is largest");
+	}
+	else{
+		printf("c is largest");
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+5.	Swap Two Numbers
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a,b,t;
+	printf("Enter the value a");
+	scanf("%d",&a);
+	printf("Enter the value b");
+	scanf("%d",&b);
+	printf("Before swapping");
+	printf("%d %d\n",a,b);
+	
+	t=a;
+	a=b;
+	b=t;
+	printf("After swapping");
+	
+	printf("%d %d ",a,b);
+
+	
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+6.	Find the Number of Integers Divisible by 5
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,i,a;
+	printf("Enter the number ");
+	scanf("%d",&n);
+	printf("Enter the element");
+	for(i=1;i<=n;i++)
+	{
+		scanf("%d",&a);
+		
+		
+		if(a%5==0)
+		{
+			printf("%d ",a);
+		}
+	}
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
