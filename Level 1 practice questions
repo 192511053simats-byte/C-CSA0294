@@ -116,4 +116,445 @@ int main()
 	
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+7.	Check if Two Numbers are Equal
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a,b;
+	printf("Enter value of a");
+	scanf("%d",&a);
+	printf("Enter value of b");
+	scanf("%d",&b);
+	
+	if(a==b)
+	{
+		printf("same");
+	}
+	else
+	{
+		printf("not same");
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+8.	Sum of Digits 
+Sum of digits problem allows a user to enter any number, divide that number into individual numbers, and sum those individual numbers.
+
+Example 1:
+Given number = 14892 => 1 + 4 + 8 + 9 + 2 = 24.
+Sum of digits of a given number “14892” is 24.
+
+Example 2:
+Given number = 3721 => 3 + 7 + 2 + 1 = 13.
+Sum of digits of a given number “3721” is 13.
+
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,i,sum=0,rem;
+	printf("Enter the number");
+	scanf("%d",&n);
+	
+    while(n!=0)
+    {
+    	rem=n%10;
+    	sum+=rem;
+    	n/=10;
+	}
+	
+	
+	printf("Sum: %d",sum);
+	
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+9.	Increment by 1 to all the Digits of a Given Integer
+Problem Description
+Increases 1 to all of the given integer digit and print the sum of all digits.
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,i,sum=0,rem,count=0;
+	printf("Enter the number");
+	scanf("%d",&n);
+	
+    while(n!=0)
+    {
+    	rem=n%10;
+    	sum+=rem;
+    	n/=10;
+    	count++;
+	}
+	
+	
+	printf("Sum: %d",sum+count);
+	
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+10.Multiplication Table
+A multiplication table of numbers is created by multiplying a constant integer by a number of repetitions ranging from 1 to 10.
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a,b,i;
+	printf("Enter the number");
+	scanf("%d",&a);
+	printf("Enter the count");
+	scanf("%d",&b);
+	
+	for(i=1;i<=b;i++)
+	{
+		printf("%d X %d=%d\n",a,i,a*i);
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+11.	Count the Number of Vowels and Consonants in a Sentence
+Problem Description
+This problem takes the sentence as input and counts the number of vowels & consonants in a sentence.
+Ans:
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char str[100];
+	int i,vowel=0,consonant=0;
+	
+	printf("Enter the sentence");
+	scanf("%[^\n]",str);
+	
+	for(i=0;str[i]!='\0';i++)
+	{
+		char ch=str[i];
+		if(ch>='A' && ch<='Z')
+		{
+			ch=ch+32;
+		}
+		if(ch>='a'&&ch<='z')
+		{
+			if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+		{
+			vowel++;
+		}
+			
+		
+		    else
+		    {
+		    	  consonant++;
+			}
+		
+			 
+		
+		}
+		
+	}
+	printf("vowel count:%d\n",vowel);
+	printf("Consonant count:%d",consonant);
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+12.	Accept the Height of a Person & Categorize as Taller, Dwarf & Average
+Problem Description
+This problem accepts the height of a person as input and categorizes as taller, dwarf & average.
+Ans:
+#include <stdio.h>
+
+int main()
+{
+    int a;      // height
+    char g;     // gender
+    
+    printf("Enter the gender (M/F): ");
+    scanf(" %c", &g);
+    
+    printf("Enter the height: ");
+    scanf("%d", &a);
+    
+    if(g=='m' || g=='M')
+    {
+        if(a < 165)
+        {
+            printf("Dwarf");
+        }
+        else if(a <= 180)
+        {
+            printf("Average");
+        }
+        else
+        {
+            printf("Taller");
+        }
+    }
+    else if(g=='f' || g=='F')
+    {
+        if(a < 152)
+        {
+            printf("Dwarf");
+        }
+        else if(a <= 168)
+        {
+            printf("Average");
+        }
+        else
+        {
+            printf("Taller");
+        }
+    }
+    else
+    {
+        printf("Invalid gender");
+    }
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+17.	Reverse a Number and Check if it is a Palindrome
+Problem Description
+Accepts an integer, reverse it and also checks if it is a palindrome or not.
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,rem,original,rev,palin;
+	printf("Enter the number");
+	scanf("%d",&n);
+	
+	original=n;
+	while(n!=0)
+	{
+		rem=n%10;
+		rev=rev*10+rem;
+		n/=10;
+	}
+	printf("reversed num %d",rev);
+	
+	if(original==rev)
+	{
+		printf("it is a Palindrome");
+		
+	}
+	else
+	{
+		printf("it is not a Palindrome");
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+19.	Find Prime Numbers in a Given Range
+Problem Description
+Take the range and finds all the prime numbers between the range and also prints the number of prime numbers.
+Case:1
+Enter the value of num1 and num2
+70 85
+Prime numbers are
+71
+73
+79
+83
+Ans:
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int p, q, i, j;
+
+    printf("Enter start number: ");
+    scanf("%d", &p);
+
+    printf("Enter end number: ");
+    scanf("%d", &q);
+
+    for (i = p; i <= q; i++)
+    {
+        int a = sqrt(i);
+        int is_prime = 1;
+
+        if (i <= 1)
+            continue; 
+
+        for (j = 2; j <= a; j++)
+        {
+            if (i % j == 0)
+            {
+                is_prime = 0;
+                break;
+            }
+        }
+
+        if (is_prime == 1)
+        {
+            printf("%d ", i);   
+        }
+    }
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+26.	Rhombus Star Pattern in C
+*
+***
+*****
+***
+*
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,i,j,k;
+	char c;
+	
+	printf("Enter the no of rows");
+	scanf("%d",&n);
+	printf("Enter the Symbol");
+	scanf(" %c",&c);
+	
+	for(i=1;i<=n;i++)
+	{
+		
+		for(k=1;k<=(2*i-1);k++)
+		{
+			printf("%c",c);
+		}
+		printf("\n");
+	}
+	
+	for(i=n-1;i>=1;i--)
+	{
+		for(k=1;k<=(2*i-1);k++)
+		{
+			printf("%c",c);
+		}
+		printf("\n");
+	}
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+27.	Diamond Star Pattern
+Enter the number of rows: 5
+    *
+   ***
+  *****
+   ***
+    *
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,i,j,k;
+	char c;
+	
+	printf("Enter the no of rows");
+	scanf("%d",&n);
+	printf("Enter the Symbol");
+	scanf(" %c",&c);
+	
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=n-i;j++)
+		{
+		   printf(" ");
+		}
+		for(k=1;k<=(2*i-1);k++)
+		{
+			printf("%c",c);
+		}
+		printf("\n");
+	}
+	
+	for(i=n-1;i>=1;i--)
+	{
+		for(j=1;j<=n-i;j++)
+		{
+		   printf(" ");
+		}
+		for(k=1;k<=(2*i-1);k++)
+		{
+			printf("%c",c);
+		}
+		printf("\n");
+	}
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+34.	String Palindrome
+String Palindrome: A palindrome is a word, phrase or sentence that reads the same backward or forward. 
+A string is said to be a palindromic string when we traverse it from start to end or end to start then we get the same result.
+Ans:
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char arr[50],original[50];
+	 printf("Enter the sentence");
+	 scanf("%s",&arr);
+	 strcpy(original,arr);
+	 
+	strrev(arr);
+	printf("%s\n",arr);
+	
+	if(strcmp(original,arr)==0)
+	{
+		printf("it is a Palindrome");
+		
+	}
+	else
+	{
+		printf("it is not a Palindrome");
+	}
+
+	
+	 
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+37.	Print the sum of all even numbers between 1 and 100.
+Example Solution: Sum of even numbers between 1 and 100: 2550
+Ans:
+#include <stdio.h>
+int main()
+{
+	int i,sum=0;
+	for(i=1;i<=100;i++)
+	{
+		if(i%2==0){
+			sum=sum+i;
+		}
+		
+	}
+	printf("%d",sum);
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+39.	Find the sum of all even digits in a given number.
+Sample: 
+Input: Enter a number: 356824
+Output: Sum of even digits: 20
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,i,sum=0,rem;
+	printf("Enter the number");
+	scanf("%d",&n);
+	
+    while(n!=0)
+    {
+    	rem=n%10;
+    	if(rem%2==0)
+    	{
+    			sum+=rem;
+    	
+		}
+    n/=10;
+	}
+	
+	
+	printf("Sum: %d",sum);
+	
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
