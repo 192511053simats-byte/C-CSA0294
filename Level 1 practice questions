@@ -310,6 +310,129 @@ int main()
     return 0;
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+13.	Prime Number 
+A prime number is a natural number that is greater than 1 and is only divisible by 1 and itself. In other words, no number except the number itself, and 1 can divide a prime number.
+Example: 2, 3, 5, 7, 11, 13, 17, 19 …., etc.
+Problem Description
+check if a given number is Prime number. If the number is Prime, then display it is a prime number else display it is not a prime number.
+
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int a,i,is_prime=1;
+	printf("Enter the number");
+	scanf("%d",&a);
+	
+	if(a<=1)
+	{
+		printf("Neither prime nor composite",a);
+	}
+	else
+	{
+		for (i=2;i<=a/2;i++)
+		{
+			if(a%i==0){
+			is_prime=0;
+			break;
+			}
+		
+		}
+	    if (is_prime==1)
+	   {
+		printf(" %d is prime",a);
+	   }
+	    else
+	   {
+		printf("%d is composite",a);
+	   }
+   }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+14.	Check Whether a Given Number is Perfect Number
+A perfect number is a number that is equal to the sum of its proper divisors. For example, the divisors of 6 are 1, 2 and 3. The sum of the proper divisors of 6 is 1 + 2 + 3 = 6, which is a perfect number. The sum of the proper divisors of 28 is 1 + 2 + 4 + 7 + 14 = 28, which is also a perfect number.
+
+Problem Description
+Ask the user for a number and then check whether the number is a perfect number or not.
+Ans:
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int n;
+	printf("Enter the number");
+	scanf("%d",&n);
+	
+	int root=sqrt(n);
+	if(root*root==n)
+	{
+		printf("Perfect square :%d",n);
+		
+	}
+	else
+	{
+		printf("Not perfect square:%d",n);
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+15.	Check Armstrong Number
+Armstrong Number in C: An Armstrong number is an n-digit base b number such that the sum of its (base b) digits raised to the power n is the number itself. Armstrong numbers are 0, 1, 153, 370, 371, 407, etc.
+
+Armstrong Number Formula: wxyz = pow(w,n) + pow(x,n) + pow(y,n) + pow(z,n)
+Ans:
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int a,digit,sum,temp=0;
+	printf("Enter the number");
+	scanf("%d",&a);
+	temp=a;
+	while(temp>0)
+	{
+		digit=temp%10;
+		sum+=pow(digit,3);
+		temp=temp/10;
+	}
+	if(sum==a)
+		{
+			printf("Amstrong");
+		}
+	else
+		{
+			printf("not Amstrong");
+		}
+	
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+16.	Reverse a Number
+Reverse a Number means moving the digit at the last position to the first position and vice versa.
+
+For example, if the given number is “1234”, the reverse number will be “4321”.
+Ans:
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, i;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    printf("Reversed Array elements = { ");
+    for(i = n - 1; i >= 0; i--)
+        printf("%d%s", arr[i], (i > 0) ? ", " : " ");
+    printf("}\n");
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 17.	Reverse a Number and Check if it is a Palindrome
 Problem Description
 Accepts an integer, reverse it and also checks if it is a palindrome or not.
@@ -387,6 +510,170 @@ int main()
         {
             printf("%d ", i);   
         }
+    }
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+20.	Leap Year 
+Leap Year: A year is a Leap Year if it satisfies the following conditions:
+
+The year is exactly divisible by 400 (such as 2000,2400) or,
+The year is exactly divisible by 4 (such as 2008, 2012, 2016) and not a multiple of 100 (such as 1900, 2100, 2200).
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int a;
+	printf("Enter the year");
+	scanf("%d",&a);
+	
+	if(a%400==0 || a%4==0 && a%100!=0)
+	{
+		printf("Leap year");
+	}
+	else
+	{
+		printf("Not leap year");
+	}
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+21.	Fibonacci Series 
+Fibonacci series are the numbers in the sequence 0, 1, 1, 2, 3, 5, 8, 13, 21….. The series in the Fibonacci sequence is equal to the sum of the previous two terms. The Fibonacci sequence’s first two terms are 0 and 1 respectively.
+
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,i,j;
+	printf("enter the number");
+	scanf("%d",&n);
+	int arr[n+2];
+	arr[0]=0;
+	arr[1]=1;
+	for(i=0;i<=n;i++)
+	{
+		j=arr[i]+arr[i+1];
+		arr[i+2]=j;
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("%d",arr[i]);
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+22.	Factorial 
+When you multiply a positive integer by all the integers smaller than that positive integer, you get its factorial. 
+For example, factorial of 3 is 3! = 1*2*3 = 6 and factorial of 6 is 6! = 6 * 5 * 4 * 3 * 2 * 1 which equals to 720.
+By default, the factorial of 0 is 1, and Factorial of a negative number is not defined.
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int i,n,fact=1;
+	
+	printf("N=");
+	scanf("%d",&n);
+	
+	for(i=1;i<=n;i++)
+	{
+		fact=fact*i;
+	}
+	
+	printf("factorial of %d =%d\n",n,fact);
+	return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+23.	Floyd’s Triangle
+Floyds Triangle in C is a right-angled triangular array of natural numbers. It is defined by filling the rows of the triangle with consecutive numbers, starting with a 1 in the top left corner: 1. Number of rows of Floyd’s triangle to print is entered by the user. For loop is used to print the output of the program.
+Example:
+A Floyd’s triangle is a triangle in which each number is the sum of the two numbers above it. For example, the first row of the Floyd’s triangle is 1, the second row is 2 + 1 = 3, and so on. The following is a diagram of the Floyd’s triangle:
+
+1  
+2 3  
+4 5 6  
+7 8 9 10
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a,i,j,num=1;
+	printf("Enter the no of rows");
+	scanf("%d",&a);
+	
+	for(i=1;i<=a;i++)
+	{
+		for(j=1;j<=i;j++)
+		{
+			printf("%d ",num);
+			num++;
+		}
+		 printf("\n");
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+24.	Pascal Triangle
+Pascal Triangle is a pattern similar to a triangle. Firstly, 1 is placed at the top, and then we start putting the numbers in a triangular pattern. The numbers which we get in each step are the addition of the above two numbers.
+Enter the Number of Rows in the Pascal Triangle:: 6
+          1
+        1    1
+      1    2    1
+    1    3    3    1
+  1    4    6    4    1
+1    5    10   10   5    1
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a,i,j,value,space;
+	 printf("enter the no of rows");
+	 scanf("%d",&a);
+	 
+	 for(i=0;i<a;i++)
+	 {  for(space=0;space<=a-i-1;space++)
+	 {
+	 	printf(" ");
+	 }
+	 	value=1;
+	 	for(j=0;j<=i;j++)
+	 	{
+	 		printf("%d ",value);
+	 		value=value*(i-j)/(j+1);
+		 }
+		 printf("\n");
+	 }
+	 
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+25.	A star pattern is a pattern that shows up as a staircase of stars.
+
+*
+**
+***
+****
+*****
+Ans:
+#include <stdio.h>
+
+int main() {
+    int i, j, a;
+    char c;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &a);
+
+    printf("Enter the symbol: ");
+    scanf(" %c", &c);
+
+    for (i = 1; i <= a; i++) {
+        for (j = 1; j <= i; j++) {
+            printf("%c", c);
+        }
+        printf("\n");
     }
 
     return 0;
@@ -478,6 +765,161 @@ int main()
 	
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+28.	Find the Area of a Circle
+Area of circle is defined as pi*r*r where pi is a constant whose value is (22/7 or 3.142) and r is the radius of a circle.
+
+Formula to calculate the area of circle is: Area = pi*r*r
+Enter Radius of Circle:
+10
+The area of Circle with radius 10 is: 314.16
+Ans:
+#include <stdio.h>
+int main()
+{
+	int r,Area;
+	
+	printf("Enter the radius;");
+	scanf("%d",&r);
+	
+	Area=3.14*r*r;
+	
+	printf("%d",Area);
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+29.	Find the Area of a Triangle
+The area of a triangle is defined as the total area bounded by the three sides of a given triangle.
+
+Area of a Triangle Formula:
+
+If the base and height are given, the area of the triangle is determined using the formula
+A = 1/2∗b∗h
+Enter Base and Height: 10 5
+Area of Triangle is 25.00
+Ans:
+#include <stdio.h>
+int main()
+{
+	int b,h,A;
+	 printf("Enter base");
+	 scanf("%d",&b);
+	 printf("Enter height");
+	 scanf("%d",&h);
+	 
+	 A=0.5*b*h;
+	 printf("Area:%d",A);
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+30.	Find GCD and LCM of Two Integers
+GCD (Greatest Common Divisor)
+GCD stands for Greatest Common Divisor. GCD of two numbers is the largest positive integer that completely divides both the given numbers.
+
+Example: GCD(10,15) = 15, GCD(12,15) = 3.
+
+LCM (Least Common Multiple)
+LCM stands for Least Common Multiple. It is a method to find the lowest common multiple between the two numbers. LCM of two numbers is the lowest possible number that is divisible by both numbers.
+
+Examples: LCM(10,15) = 30, LCM(12,15) = 60.
+Enter two numbers:
+12 15
+GCD of 12 and 15 = 3
+LCM of 12 and 15 = 60
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int a,b,t,s,p;
+	printf("Enter the number 1");
+	scanf("%d",&a);
+	printf("Enter the number 2");
+	scanf("%d",&b);
+	s=a;
+	p=b;
+		
+	
+	while(b!=0)
+	{
+		t=b;
+		b=a%b;
+		a=t;
+		
+		
+	}
+	printf("gcd %d\n",a);
+	printf("lcm %d",s*p/a);
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+31.	Find HCF of Two Numbers
+HCF stands for Highest Common Factor. HCF of two numbers is the largest positive integer that completely divides both the given numbers.
+
+Example: HCF(10,15) = 15, HCF(12,15) = 3.
+
+Enter two numbers
+12 15
+HCF of 12 and 15 = 3.
+Ans:
+#include <stdio.h>
+
+int main()
+{
+	int a,b,t,s,p;
+	printf("Enter the number 1");
+	scanf("%d",&a);
+	printf("Enter the number 2");
+	scanf("%d",&b);
+	s=a;
+	p=b;
+		
+	
+	while(b!=0)
+	{
+		t=b;
+		b=a%b;
+		a=t;
+		
+		
+	}
+	printf("gcd %d\n",a);
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+32.	Compare Two Strings
+String is a sequence of characters terminated by the special character ‘\0’. Strings can be compared with or without using the string function.
+
+Example:
+String1=”Hello”      String2=”Hello”      Both string are equal
+String1=”Hello”      String2=”Hell”        String1 is greater
+String1=”Hello”      String2=”Helz”       String2 is greater
+
+Enter the First string
+hello
+Enter the Second string
+hell
+First string is greater than Second string
+Ans:
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char str1[50],str2[50];
+	int len,len1;
+	printf("Enter the a");
+	scanf(" %s",&str1);
+	printf("Enter the b");
+	scanf(" %s",&str2);
+	len=strlen(str1);
+	len1=strlen(str2);
+	if(len>len1)
+	{
+		printf("String 1 is greater");
+	}
+	else
+	{
+		printf("String 2 is greater");
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 34.	String Palindrome
 String Palindrome: A palindrome is a word, phrase or sentence that reads the same backward or forward. 
 A string is said to be a palindromic string when we traverse it from start to end or end to start then we get the same result.
@@ -509,6 +951,63 @@ int main()
 	 
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+35.	Anagram 
+Anagram: Two strings are said to be anagrams if they satisfy two conditions, the length of both strings must be equal to each other and second the strings must have the same set of characters.
+Example 1:
+
+First String = “hectare” and Second String = “teacher”
+
+Case 1:
+Lengths must be equal to each other.
+length of “hectare” = 7
+length of “teacher” = 7
+Case 1 passed.
+
+Case 2:
+Set of characters in
+hectare {‘h’ , ’e’ , ’c’ , ’t’ , ’a’ , ’r’ , ’e’}
+teacher {‘t’ , ’e’ , ’a’ , ’c’ , ’h’ , ’e’, ’r’}
+
+Every character from the first string has a similar character to it in the other string. Case 2 passed.
+
+”teacher” and ”hectare” are anagrams.
+
+Enter the string
+study
+Enter another string
+dusty
+"study" and "dusty" are anagrams.
+Ans:
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	int a,i;
+	char str1[50],str2[50];
+	int len,len1;
+	
+	printf("Enter the word");
+	scanf("%s",&str1);
+	printf("Enter the word2");
+	scanf("%s",&str2);
+	
+	len=strlen(str1);
+	len1=strlen(str2);
+	
+	if(len==len1)
+	{
+		if(strcmp(str1,str2))
+		{
+			printf("Anagram");
+		}
+		else
+		{
+			printf("Not anagram");
+		}
+	}
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 37.	Print the sum of all even numbers between 1 and 100.
 Example Solution: Sum of even numbers between 1 and 100: 2550
 Ans:
@@ -526,7 +1025,30 @@ int main()
 	printf("%d",sum);
 
 }
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+38.	Check if a given number is a perfect square or not.
+Sample Input: Enter a number: 25
+Sample Output: 25 is a perfect square.
+Ans:
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int n;
+	printf("Enter the number");
+	scanf("%d",&n);
+	
+	int root=sqrt(n);
+	if(root*root==n)
+	{
+		printf("Perfect square :%d",n);
+		
+	}
+	else
+	{
+		printf("Not perfect square:%d",n);
+	}
+}
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 39.	Find the sum of all even digits in a given number.
 Sample: 
@@ -557,4 +1079,182 @@ int main()
 	
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+40.	Swap two numbers without using a temporary variable.
+Sample:
+Input: 
+Enter first number: 10
+Enter second number: 20
+Output:
+Before swapping: num1 = 10, num2 = 20
+After swapping: num1 = 20, num2 = 10
+Ans:
+#include <stdio.h>
+int main()
+{
+	int a,b;
+	printf("Enter value a");
+	scanf("%d",&a);
+	printf("Enter value b");
+	scanf("%d",&b);
+	printf("Before Swapping");
+	printf("%d %d\n",a,b);
+	
+	a=a+b;
+	b=a-b;
+	a=a-b;
+	printf("After Swapping");
+	printf("%d %d",a,b);
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+41.	Find the Number of Elements in an Array
+array[] = {15, 50, 34, 20, 10, 79, 100};
+Size of the given array is 7
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,arr[50],i;
+	
+	printf("Enter the sequence");
+	scanf("%d",&n);
+	
+	printf("Enter element");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
 
+    printf("Size of the given array is %d", n);
+
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+42.	Delete an Element from an Array
+Example: arr[6] = {12,65,32,75,48,11}
+
+Value:  12  65  32  75  48  11
+               ↑    ↑    ↑     ↑    ↑     ↑
+Index:   0    1    2    3    4     5
+The Element we are deleting here is “75”.
+
+Original Array:
+
+12	65	32	75	48	11
+New Array:
+
+12	65	32	48	11
+Ans:
+#include <stdio.h>
+
+int main()
+{
+    int n, i, j, arr[50];
+    int value;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    
+    for(i = 0; i < n; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter element to be deleted: ");
+    scanf("%d", &value);
+
+    
+    for(i = 0; i < n; i++) {
+        if(arr[i] == value) {
+            for(j = i; j < n - 1; j++) {
+                arr[j] = arr[j + 1]; 
+            }
+            n--;  
+            break; 
+        }
+    }
+
+  
+    printf("New Array: ");
+    for(i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+43.	Find Sum of Array Elements using Pointer
+Expected Input and Output
+If we are entering 5 elements (N = 5), with array element values as 4, 9, 10, 56 and 100 then,
+Sum of Elements of the array will be: 4 + 9 + 10 + 56 + 100 = 179
+Ans:
+#include <stdio.h>
+int main()
+{
+	int arr[50],a,i,sum=0;
+	int *p=&a;
+	int *ptr;
+	printf("Enter the no of elements");
+	scanf("%d",p);
+	
+	for(i=0;i<=a;i++)
+	{
+		printf("Enter the element");
+		scanf("%d",&arr[i]);
+		
+		
+	}
+	ptr=arr;
+	
+	for(i=0;i<=a;i++)
+	{
+		sum=sum+*ptr;
+		ptr++;
+		
+	}
+	printf("Sum:%d",sum);
+	
+	
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+49.	Matrix Multiplication
+Example 1:
+[1 4
+ 3 2] * 
+[1 2 
+ 2 1] 
+= [1∗1+3∗24∗1+2∗21∗2+3∗14∗2+2∗1] = [78510]
+Ans:
+#include <stdio.h>
+int main()
+{
+	int i,j,arr[2][2],arr1[2][2];
+	
+	for(i=0;i<2;i++)
+	{
+		for(j=0;j<2;j++)
+		{
+			printf("enter element");
+			scanf("%d",&arr[i][j]);
+		}
+	}
+	for(i=0;i<2;i++)
+	{
+		for(j=0;j<2;j++)
+		{
+			printf("enter element2");
+			scanf("%d",&arr1[i][j]);
+		}
+	}
+	for(i=0;i<2;i++)
+	{
+		for(j=0;j<2;j++)
+		{
+			printf("%d ",arr[i][j]*arr1[i][j]);
+		}
+		printf("\n");
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
