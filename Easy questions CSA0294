@@ -246,44 +246,27 @@ Sample Output:
 Numbers are = 60, 61, 62, 64, 65, 66, 67, 68, 69, 70
 Ans:
 #include <stdio.h>
-
 int main()
 {
-    int P, Q, R;
-    printf("Enter P: ");
-    scanf("%d", &P);
-    printf("Enter Q: ");
-    scanf("%d", &Q);
-    printf("Enter digit to exclude (R): ");
-    scanf("%d", &R);
-
-    printf("Numbers are = ");
-
-    for(int num = P; num <= Q; num++)
-    {
-        int temp = num;
-        int found = 0;
-
-        while(temp != 0)
-        {
-            if(temp % 10 == R)   // digit matches R
-            {
-                found = 1;
-                break;
-            }
-            temp /= 10;
-        }
-
-        if(found)
-            continue;
-
-        printf("%d ", num);
-    }
-
-    return 0;
+	int p,q,r,i;
+	printf("Enter start");
+	scanf("%d",&p);
+	printf("Enter end");
+	scanf("%d",&q);
+	printf("Enter stop");
+	scanf("%d",&r);
+	for(i=p;i<=q;i++)
+	{
+		if(i%10==3)
+		continue;
+		else
+		{
+			printf("%d ",i);
+		}
+	
+		
+	}
 }
-
-
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 9.	Write a program to print the following pattern. Get the number of rows from the user.
