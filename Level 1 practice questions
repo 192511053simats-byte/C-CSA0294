@@ -1,0 +1,24 @@
+1.	Check Whether a Given Number is Even or Odd
+Ans:
+#include <stdio.h>
+int  main()
+{
+	int a;
+	printf("Enter the number");
+	scanf("%d",&a);
+	
+	if(a%2==0)
+	{
+		printf("The entered number is Even");
+	}
+	else
+	{
+		printf("The entered number is odd");
+	}
+}
+Output:
+Enter the number 2
+The entered number is Even
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.	Find the Sum of Even and Odd Numbers
+Ans:
