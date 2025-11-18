@@ -1215,8 +1215,49 @@ int main()
 	}
 	printf("Sum:%d",sum);
 	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+44.	Print all Non Repeated Elements in an Array
+Enter size of the array: 6
+ 
+Enter 6 elements of an array: 12
+10
+4
+10
+12
+56
+ 
+The array after removing duplicates is:  12 10 4 56
+Ans:
+#include <stdio.h>
+int main()
+{
+	int arr[50],n,i,j,count;
 	
+	printf("Enter the Sequence");
+	scanf("%d",&n);
 	
+	for(i=0;i<n;i++)
+	{
+		printf("Enter element");
+		scanf("%d",&arr[i]);
+		
+	}
+	for(i=0;i<n;i++)
+	{
+	   count=0;
+	   for(j=0;j<n;j++)
+	   {
+	   	if (arr[i]==arr[j])
+	   	{
+	   		count++;
+		}
+	   }
+	   if(count==1)
+	   {
+	   	printf("%d",arr[i]);
+	   }
+	}
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 49.	Matrix Multiplication
@@ -1258,3 +1299,10 @@ int main()
 	}
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+50.	Find the Perimeter of a Circle, Rectangle and Triangle
+perimeter of rectangle: 2 * (a + b)
+perimeter of General triangle: a + b + c
+perimeter of Equilateral triangle: 3 * a
+perimeter of Right angled triangle: width + height + sqrt(width ^ 2 + height ^ 2)
+perimeter of circle: 2 * pi * r
+Ans:
