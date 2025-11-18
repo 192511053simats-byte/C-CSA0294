@@ -920,6 +920,40 @@ int main()
 	}
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+33.	Check Whether a Number is Palindrome or Not
+A number is said to be a palindrome number if it reads the same forward and backward i.e., on reversing the digits of the number we get the same number.
+Enter the number: 121
+121 is a palindrome number.
+
+Enter the number: 342
+342 is not a palindrome number.
+Ans:
+#include <stdio.h>
+
+int main() {
+	int rem,n,rev;
+	scanf("%d",&n);
+	int original=n;
+	
+	while(n!=0)
+	{
+	    rem=n%10;
+	    rev=rev*10+rem;
+	    n/=10;
+	}
+	printf("%d\n",rev);
+	
+	if(original==rev)
+	{
+	    printf("Number is palindrome");
+	}
+	else
+	{
+	    printf("Number is not palindrome");
+	}
+
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 34.	String Palindrome
 String Palindrome: A palindrome is a word, phrase or sentence that reads the same backward or forward. 
 A string is said to be a palindromic string when we traverse it from start to end or end to start then we get the same result.
@@ -1005,7 +1039,32 @@ int main()
 			printf("Not anagram");
 		}
 	}
-	
+------------------------------------------------------------------------------------------------------------------------------------------------------------	
+}
+36.	Calculate the Power of a Number
+
+For example: In the case of 2 3
+2 is the base number
+3 is the exponent
+And, the power is equal to 2*2*2
+
+Sample input
+Base number: 2
+Exponent number: 3
+Output:
+8
+Ans:
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int a,b,c;
+	printf("base number");
+	scanf("%d",&a);
+	printf("Exponent number");
+	scanf("%d",&b);
+	c=pow(a,b);
+	printf("%d",c);
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 37.	Print the sum of all even numbers between 1 and 100.
@@ -1260,6 +1319,77 @@ int main()
 	}
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+45.	Cyclically Permute the Elements of an Array
+Enter the value of the n = 4
+Enter the numbers
+3
+40
+100
+68
+Cyclically permuted numbers are given below
+40
+100
+68
+3
+Ans:
+#include <stdio.h>
+int main()
+{
+	int arr[50],n,i;
+	printf("Enter the sequence");
+	scanf("%d",&n);
+	
+	for(i=0;i<n;i++)
+	{
+		printf("Enter the element");
+		scanf("%d",&arr[i]);
+	}
+	
+	int first_element=arr[0];
+	for(i=0;i<n-1;i++)
+	{
+		arr[i]=arr[i+1];
+	}
+	arr[n-1]=first_element;
+	printf("Cylindrical print\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d",arr[i]);
+	}
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+46.	Find Missing Numbers in Array
+Enter size of array : 6
+Enter elements into array : 
+1
+2
+3
+5
+6
+Missing element is : 4
+Ans:
+#include <stdio.h>
+int main()
+{
+	int n,total,missing,i,sum=0;
+	
+	printf("Enter the size");
+	scanf("%d",&n);
+	int arr[n];
+	
+	for(i=0;i<n;i++)
+	{
+		printf("Enter element");
+		scanf("%d",&arr[i]);
+		sum+=arr[i];
+	}
+	total=(n+1)*(n+2)/2;
+	missing=total-sum;
+	
+	printf("Missing Number %d",missing);
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 49.	Matrix Multiplication
 Example 1:
 [1 4
@@ -1306,3 +1436,40 @@ perimeter of Equilateral triangle: 3 * a
 perimeter of Right angled triangle: width + height + sqrt(width ^ 2 + height ^ 2)
 perimeter of circle: 2 * pi * r
 Ans:
+#include <stdio.h>
+#include <math.h> 
+
+int main()
+{
+    int a, b, c, width, height;
+    float r; 
+    float perimeterofrectangle, perimeterofGeneraltriangle, perimeterofEquilateraltriangle,
+          perimeterofRightangledtriangle, perimeterofcircle; 
+
+    printf("Enter value for a: ");
+    scanf("%d", &a);
+    printf("Enter value for b: ");
+    scanf("%d", &b);
+    printf("Enter value for c: ");
+    scanf("%d", &c);
+    printf("Enter value for r: ");
+    scanf("%f", &r); 
+    printf("Enter value for height: ");
+    scanf("%d", &height);
+    printf("Enter value for width: ");
+    scanf("%d", &width);
+
+    perimeterofrectangle = 2 * (a + b);
+    perimeterofGeneraltriangle = a + b + c;
+    perimeterofEquilateraltriangle = 3 * a;
+    perimeterofRightangledtriangle = width + height + sqrt((float)width * width + (float)height * height); // Corrected exponentiation and type casting
+    perimeterofcircle = 2 * 3.14 * r;
+
+    printf("Perimeter of Rectangle: %.2f\n", perimeterofrectangle);
+    printf("Perimeter of General Triangle: %.2f\n", perimeterofGeneraltriangle);
+    printf("Perimeter of Equilateral Triangle: %.2f\n", perimeterofEquilateraltriangle);
+    printf("Perimeter of Right-angled Triangle: %.2f\n", perimeterofRightangledtriangle);
+    printf("Perimeter of Circle: %.2f\n", perimeterofcircle);
+
+    return 0; 
+}
