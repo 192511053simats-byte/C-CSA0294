@@ -1291,32 +1291,39 @@ Ans:
 #include <stdio.h>
 int main()
 {
-	int arr[50],n,i,j,count;
-	
-	printf("Enter the Sequence");
-	scanf("%d",&n);
-	
-	for(i=0;i<n;i++)
-	{
-		printf("Enter element");
-		scanf("%d",&arr[i]);
-		
-	}
-	for(i=0;i<n;i++)
-	{
-	   count=0;
-	   for(j=0;j<n;j++)
-	   {
-	   	if (arr[i]==arr[j])
-	   	{
-	   		count++;
-		}
-	   }
-	   if(count==1)
-	   {
-	   	printf("%d",arr[i]);
-	   }
-	}
+    int arr[50], n, i, j, count;
+
+    printf("Enter the Sequence: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter element: ");
+        scanf("%d", &arr[i]);
+    }
+
+  
+    for (i = 0; i < n; i++)
+    {
+        count = 0;
+
+       
+        for (j = 0; j < i; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                count = 1;   
+                break;
+            }
+        }
+
+        if (count == 0) 
+        {
+            printf("%d ", arr[i]);
+        }
+    }
+
+    return 0;
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 45.	Cyclically Permute the Elements of an Array
