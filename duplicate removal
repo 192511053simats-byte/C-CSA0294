@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int len, index = 0;
+
+    printf("Enter a string: ");
+    scanf(" %[^\n]", str);  // Read full line including spaces
+
+    len = strlen(str);
+
+    for (int i = 0; i < len; i++) {
+        int j;
+        for (j = 0; j < i; j++) {
+            if (str[i] == str[j]) {
+                break;  // Duplicate found
+            }
+        }
+        if (j == i) {
+            str[index++] = str[i];  // Keep unique character
+        }
+    }
+
+    str[index] = '\0';  // Null terminate the string
+
+    printf("String after removing duplicates: %s\n", str);
+
+    return 0;
+}
