@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[100], n, i, key, newSize = 0;
+
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+
+    printf("Enter array elements:\n");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter element to remove: ");
+    scanf("%d", &key);
+
+    // Remove all occurrences
+    for(i = 0; i < n; i++)
+    {
+        if(a[i] != key)
+        {
+            a[newSize] = a[i];
+            newSize++;
+        }
+    }
+
+    printf("Array after removing %d:\n", key);
+    for(i = 0; i < newSize; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
