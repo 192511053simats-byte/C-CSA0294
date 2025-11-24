@@ -10,7 +10,7 @@ struct user
 
 int main()
 {
-    int choice, i, j, count = 0, found;
+    int choice, i, j, count = 2, found;
     char sname[100];
     struct user u[10];
 
@@ -109,4 +109,5 @@ int main()
 
     return 0;
 }
+
 
