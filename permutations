@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+	int n,i,arr[50],a,b,c,d;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	for(a=0;a<n;a++)
+	{
+		for(b=0;b<n;b++)
+		{
+			for(c=0;c<n;c++)
+			{
+			    for(d=0;d<n;d++)
+			    {
+			        if(a!=b&&b!=c&&a!=c &&a!=d&&b!=d&&c!=d)
+				{
+					printf("%d%d%d%d\n",arr[a],arr[b],arr[c],arr[d]);
+				}
+			    }
+				
+			}
+		}
+	}
+	return 0;
+}
